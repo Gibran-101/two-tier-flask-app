@@ -33,7 +33,7 @@ pipeline{
         stage("Push to Docker Hub"){
             steps{
                 script{
-                    docker_push("DHC","two-tier-flask-app")
+                    docker_push("two-tier-flask-app", "latest", "gibranf")
                 }  
             }
         }
