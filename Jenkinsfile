@@ -33,7 +33,7 @@ pipeline{
         stage("Push to Docker Hub"){
             steps{
                 script{
-                    docker_push("dockerHubCreds","two-tier-flask-app")
+                    docker_push("DHC","two-tier-flask-app")
                 }  
             }
         }
@@ -47,16 +47,16 @@ pipeline{
 post{
         success{
             script{
-                emailext from: 'mentor@trainwithshubham.com',
-                to: 'mentor@trainwithshubham.com',
+                emailext from: 'amohammed53@mail.bradley.edu',
+                to: 'gibranfahad101@gmail.com',
                 body: 'Build success for Demo CICD App',
                 subject: 'Build success for Demo CICD App'
             }
         }
         failure{
             script{
-                emailext from: 'mentor@trainwithshubham.com',
-                to: 'mentor@trainwithshubham.com',
+                emailext from: 'amohammed53@mail.bradley.edu',
+                to: 'gibranfahad101@gmail.com',
                 body: 'Build Failed for Demo CICD App',
                 subject: 'Build Failed for Demo CICD App'
             }
